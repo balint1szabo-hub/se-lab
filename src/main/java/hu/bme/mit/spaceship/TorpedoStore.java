@@ -11,6 +11,7 @@ public class TorpedoStore {
 
   // rate of failing to fire torpedos [0.0, 1.0]
   private double FAILURE_RATE = 0.0; //NOSONAR
+  // kiemeltem a fuggvenybol, hogy hatekonyabb legyen
   private Random generator = new Random();
   private int torpedoCount = 0;
 
@@ -30,6 +31,7 @@ public class TorpedoStore {
 
   public boolean fire(int numberOfTorpedos){
     if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
+      // ha letrehoztuk akkor el is kell dobni, illetve mukodes szempontjabol is fontos
       throw new IllegalArgumentException("numberOfTorpedos");
     }
 
